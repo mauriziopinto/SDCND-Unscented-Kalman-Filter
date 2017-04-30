@@ -74,6 +74,9 @@ public:
   ///* the current NIS for laser
   double NIS_laser_;
 
+  // used to keep track of time
+  long long previous_timestamp_;
+
   /**
    * Constructor
    */
@@ -108,6 +111,8 @@ public:
    * @param meas_package The measurement at k+1
    */
   void UpdateRadar(MeasurementPackage meas_package);
+
+  double Normalize(const double rad);
 };
 
 #endif /* UKF_H */
